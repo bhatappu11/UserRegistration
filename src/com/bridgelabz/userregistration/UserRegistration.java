@@ -8,16 +8,16 @@ public class UserRegistration {
 	static Pattern pattern;
 	static Matcher matcher;
 	public static void main(String[] args) {
-		checkFirstName();
-		checkLastName();
-		checkEmail();
-		checkMobileNumber();
+		//checkFirstName();
+		//checkLastName();
+		//checkEmail();
+		//checkMobileNumber();
 		checkPassword();
 	}
 
 	private static void checkPassword() {
 		Scanner scanner=new Scanner(System.in);
-		pattern = Pattern.compile("(?=.*[A-Z])(?=.*[0-9]).{8,}");
+		pattern = Pattern.compile("(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8,}");
 		while(true) {
 			System.out.println("Enter the password");
 			String password = scanner.nextLine();
