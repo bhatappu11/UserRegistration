@@ -8,9 +8,29 @@ public class UserRegistration {
 	static Pattern pattern;
 	static Matcher matcher;
 	public static void main(String[] args) {
-		checkFirstName();
-		checkLastName();
-		checkEmail();
+		//checkFirstName();
+		//checkLastName();
+		//checkEmail();
+		checkMobileNumber();
+	}
+
+	private static void checkMobileNumber() {
+		Scanner scanner=new Scanner(System.in);
+		pattern = Pattern.compile("^\\d{2}[\\s]\\d{10}");
+		while(true) {
+			System.out.println("Enter the mobile number");
+			String number = scanner.nextLine();
+			matcher = pattern.matcher(number);
+			if(matcher.matches()) {
+				System.out.println("Valid"); 
+				break;
+			}
+			else {
+				System.out.println("Invalid"); 
+				continue;
+			}
+		}
+				
 	}
 
 	private static void checkEmail() {
