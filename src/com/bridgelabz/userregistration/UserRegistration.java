@@ -8,10 +8,30 @@ public class UserRegistration {
 	static Pattern pattern;
 	static Matcher matcher;
 	public static void main(String[] args) {
-		//checkFirstName();
-		//checkLastName();
-		//checkEmail();
+		checkFirstName();
+		checkLastName();
+		checkEmail();
 		checkMobileNumber();
+		checkPassword();
+	}
+
+	private static void checkPassword() {
+		Scanner scanner=new Scanner(System.in);
+		pattern = Pattern.compile(".{8,}");
+		while(true) {
+			System.out.println("Enter the password");
+			String password = scanner.nextLine();
+			matcher = pattern.matcher(password);
+			if(matcher.matches()) {
+				System.out.println("Valid"); 
+				break;
+			}
+			else {
+				System.out.println("Invalid"); 
+				continue;
+			}
+		}
+		
 	}
 
 	private static void checkMobileNumber() {
