@@ -17,7 +17,7 @@ public class UserRegistration {
 
 	private static void checkPassword() {
 		Scanner scanner=new Scanner(System.in);
-		pattern = Pattern.compile(".{8,}");
+		pattern = Pattern.compile("(?=.*[A-Z]).{8,}");
 		while(true) {
 			System.out.println("Enter the password");
 			String password = scanner.nextLine();
