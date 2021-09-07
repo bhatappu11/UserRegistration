@@ -10,6 +10,25 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		checkFirstName();
 		checkLastName();
+		checkEmail();
+	}
+
+	private static void checkEmail() {
+		Scanner scanner=new Scanner(System.in);
+		pattern = Pattern.compile("([a-zA-Z][a-zA-Z0-9_-]*[a-zA-Z0-9])(([+-_.][a-zA-Z0-9]*)?)(@[a-zA-Z0-9]*)[.]([a-z]{2,})(([.][a-zA-z]{2})?)");
+		while(true) {
+			System.out.println("Enter the email");
+			String email = scanner.next();
+			matcher = pattern.matcher(email);
+			if(matcher.matches()) {
+				System.out.println("Valid"); 
+				break;
+			}
+			else {
+				System.out.println("Invalid"); 
+				continue;
+			}
+		}
 	}
 
 	private static void checkLastName() {
@@ -28,7 +47,6 @@ public class UserRegistration {
 				continue;
 			}
 		}
-		scanner.close();
 	}
 
 	private static void checkFirstName() {
@@ -47,7 +65,6 @@ public class UserRegistration {
 				continue;
 			}
 		}
-		scanner.close();
 	}
 
 }
