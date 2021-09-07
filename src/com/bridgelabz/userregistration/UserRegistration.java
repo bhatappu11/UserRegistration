@@ -8,10 +8,10 @@ public class UserRegistration {
 	static Pattern pattern;
 	static Matcher matcher;
 	public static void main(String[] args) {
-		//checkFirstName();
-		//checkLastName();
-		//checkEmail();
-		//checkMobileNumber();
+		checkFirstName();
+		checkLastName();
+		checkEmail();
+		checkMobileNumber();
 		checkPassword();
 	}
 
